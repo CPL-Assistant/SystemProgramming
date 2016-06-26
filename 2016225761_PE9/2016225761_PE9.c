@@ -6,6 +6,8 @@
 #include <netinet/in.h>
 #include <netdb.h>
 #include <time.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 #define HOSTLEN 256
 #define BACKLOG 1
@@ -22,7 +24,7 @@ char* file_type(char* f);
 int ends_in_cgi(char* f);
 void do_exec(char *prog , int fd) ;
 void do_cat(char* f , int fd) ;
-void do_process_head(arg , fd);
+void do_process_head(char* arg , int fd);
 int make_server_socket(int portnum);
 int make_server_socket_q(int portnum , int backlog);
 int main(int ac , char* av[])
